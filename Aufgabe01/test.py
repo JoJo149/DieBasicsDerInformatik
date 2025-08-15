@@ -51,7 +51,7 @@ def run_solution_binary():
     Run the compiled 'solution' binary and return its output.
     """
 
-    binary_path = Path(get_git_root().__str__() + "/solution")  # replace with your binary name
+    binary_path = Path(get_git_root().__str__() + "/Aufgabe01/solution")  # replace with your binary name
     if not binary_path.is_file():
         raise FileNotFoundError(f"{binary_path} does not exist")
 
@@ -75,7 +75,7 @@ def test_branch_file():
 
 def test_solution_output():#
     output = run_solution_binary()
-    assert output.startswith("Hallo, ") and output.endswith("! \n"),(
+    assert output.startswith("Hallo, ") and output.endswith("!\n"),(
             f"Solution Binary does not print correctly"
     )
 

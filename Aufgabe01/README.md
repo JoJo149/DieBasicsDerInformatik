@@ -33,14 +33,15 @@ Eine beispielhafte Benutzung des Programms liefe ab wie in Listing 1 gezeigt:\
 Listing 1: Kompilieren und Aufruf des Programms
 ```
 > clang -std=c11 -Wall -g solution.c -o solution
-> ./Solution
-Hallo , hans99!
+> ./solution
+Hallo , Jonas!
 ```
 
 Gehe sicher, dass Deine Aufgabe dabei die folgenden Bedingungen erfüllt:
 - Die Ein- und Ausgabebibliothek stdio.h wird geladen.
 - Die Funktion main ist definiert.
 - printf wird zur Ausgabe von Text benutzt.
+- kein White Space am Anfang oder Ende oder zwischen der neuen Zeile und !
 
 Die Datei kompiliert ohne Fehler und Warnungen beim Aufruf von:\
-```clang -std=c11 -Wall -g solution.c -o Solution```
+```clang -std=c11 -Wall -g solution.c -o solution```
