@@ -14,7 +14,10 @@ check pytest
 check cc
 check git
 
-cat <<EOF > .git/hooks/pre-push
+ROOT_DIR=$(git rev-parse --show-toplevel)
+cd "$ROOT_DIR"
+
+cat << EOF > .git/hooks/pre-push
 #!/bin/bash
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
