@@ -17,7 +17,8 @@ check git
 ROOT_DIR=$(git rev-parse --show-toplevel)
 cd "$ROOT_DIR"
 
-echo "#!/bin/bash
+cat <<'EOF' > .git/hooks/pre-push
+#!/bin/bash
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 # The branch we don't want to push to main
@@ -33,6 +34,7 @@ do
       exit 1
   fi
 done
+
 echo "Running all exercise tests before push..."
 
 ROOT_DIR=$(git rev-parse --show-toplevel)
@@ -49,7 +51,9 @@ for dir in Aufgabe*; do
 done
 
 echo "✅ All tests passed. Proceeding with push."
-" > .git/hooks/pre-push
+EOF
+
+chmod +x .git/hooks/pre-push
 
 chmod +x .git/hooks/pre-push
 echo "✅ All tests passed and git environment implemented."
