@@ -1,3 +1,16 @@
+# IDE Files
+.idea/
+
+.DS_Store
+.vscode
+.vs
+**/__pycache__/
+
+# Build Files 
+cmake-build-*/
+build/
+Build/
+
 # Prerequisites
 *.d
 
