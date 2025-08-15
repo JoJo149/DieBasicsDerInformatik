@@ -1,7 +1,4 @@
 # Einführung in die Informatik
-lösungen unter: https://git.tu-berlin.de/introprog-ws22/hallo123/-/tree/main
-Aufgaben unter: https://isis.tu-berlin.de/course/view.php?id=30422 
-
 Dies ist ein Testprojekt für meinen kleinen Bruder, mit dem Ziel ihm die Grundlagen der Informatik näherzubringen.
 
 # Dependencies
@@ -10,6 +7,12 @@ Dies ist ein Testprojekt für meinen kleinen Bruder, mit dem Ziel ihm die Grundl
   - pytest
 - C compiler
 - git 
+
+# Setup
+
+Um das Projekt setup fertig zu machen folgendes im Terminal laufen:
+```chmod +x setup.bash```
+```./setup.bash```
 
 # Aufgabe 00
 ### Erste Schritte mit Git
