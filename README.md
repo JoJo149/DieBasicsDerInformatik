@@ -10,8 +10,8 @@ Dies ist ein Testprojekt für meinen kleinen Bruder, mit dem Ziel ihm die Grundl
 
 # Setup
 
-Um das Projekt setup fertig zu machen folgendes im Terminal laufen:
-```chmod +x setup.bash```
+Um das Projekt setup fertig zu machen folgendes im Terminal laufen:\
+```chmod +x setup.bash```\
 ```./setup.bash```
 
 # Aufgabe 00
