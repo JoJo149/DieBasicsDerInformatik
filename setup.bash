@@ -14,7 +14,7 @@ check pytest
 check cc
 check git
 
-cat <<EOF > .git/hooks/pre-push.bash
+cat <<EOF > .git/hooks/pre-push
 #!/bin/bash
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
@@ -49,4 +49,5 @@ done
 echo "✅ All tests passed. Proceeding with push."
 EOF
 
-chmod +x .git/hooks/pre-push.bash
+chmod +x .git/hooks/pre-push
+echo "✅ All tests passed and git environment implemented."
