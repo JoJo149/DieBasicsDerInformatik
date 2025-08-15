@@ -42,7 +42,7 @@ cd "$ROOT_DIR" || exit 1
 for dir in Aufgabe*; do
     if [ -d "$dir" ]; then
         echo "▶ Testing $dir..."
-        if ! pytest "$dir/test.py"; then
+        if ! pytest -s "$dir"; then
             echo "❌ Tests failed for $dir"
             exit 1
         fi
