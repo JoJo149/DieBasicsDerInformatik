@@ -2,7 +2,7 @@ import subprocess
 import pytest
 
 
-BRANCH_NAME = "feature-branch"
+BRANCH_NAME = "local-branch"
 FILE_PATH = "Aufgabe01/test.txt"
 
 def git_branch_exists(branch_name):
@@ -38,8 +38,9 @@ def file_exists_in_branch(branch_name, file_path):
 
 
 
-def test_branch_and_file_exist():
+def test_branch():
     assert git_branch_exists(BRANCH_NAME), f"Branch '{BRANCH_NAME}' does not exist"
+def test_branch_file():
     assert file_exists_in_branch(BRANCH_NAME, FILE_PATH), (
         f"File '{FILE_PATH}' not found in branch '{BRANCH_NAME}'"
     )
