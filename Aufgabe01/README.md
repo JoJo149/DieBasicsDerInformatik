@@ -10,3 +10,9 @@ Mit dem Befehl ```git branch <branch-name>``` kann ein Branch erzeugt und mit ``
 Eine Übersicht aller verfügbaren Branches erhält man mit ```git branch -a```.
 Den jeweils aktiven Branch kann man mit dem Befehl ```git checkout <branch-name>``` wechseln.
 
+Nun versuche einmal einfach den Inhalt von egal.txt an zu passen und diesen zu add, commiten und zu pushen.
+
+## Aufgabe 01.1
+
+Wie dir vielleicht aufgefallen ist, ist dies im Moment noch nicht möglich, zum pushen, musst du nämlich erst einmal die folgende Aufgabe Lösen:
+
