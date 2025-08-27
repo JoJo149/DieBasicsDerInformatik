@@ -23,19 +23,12 @@ NC='\033[0m' # No Color
 
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-# The branch we don't want to push to main
-restricted_branch="local-branch"
-target_branch="main"
-
-# Read from stdin — git pre-push provides the refs being pushed
-while read local_ref local_sha remote_ref remote_sha
-do
-  # remote_ref looks like refs/heads/main
-  if [[ "$current_branch" == "$restricted_branch" && "$remote_ref" == "refs/heads/$target_branch" ]]; then
-      printf "${RED} Abgabe-error:You cannot push '$restricted_branch' to '$target_branch'.${NC}\n"
-      exit 1
-  fi
-done
+if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ]; then
+    echo "On main/master branch."
+else
+    printf "${RED}Abgabe-error: You are on branch '$current_branch' and not on main/master branch.\n${NC}"
+    exit 1
+fi
 
 echo "Running all exercise tests before push..."
 
@@ -54,7 +47,7 @@ for dir in Aufgabe*; do
   if [ -d "$dir" ]; then
       echo "▶ Testing $dir..."
       if ! pytest -s "$dir"; then
-          printf "❌${RED}Abgabe-error: Tests failed for $dir ${NC}\n"
+          printf "${RED}Abgabe-error: Tests failed for $dir ${NC}\n"
           exit 1
       fi
   fi
