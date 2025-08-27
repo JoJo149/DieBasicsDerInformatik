@@ -8,7 +8,7 @@ Dies ist ein Testprojekt für meinen kleinen Bruder, mit dem Ziel ihm die Grundl
 - C compiler
 - git 
 
-# Aufgabe 00
+# Setup
 ### Erste Schritte mit Git
 Git ist ein freies verteiltes Versionsverwaltungssystem und kommt hauptsächlich bei der Entwicklung von Software zum Einsatz. Es protokolliert Änderungen an Dateien (z. B. Programmcode) in einem Repository und erlaubt dabei jederzeit Zugriff auf jeden der protokollierten Zustände (Commits). Änderungen am Programmcode sind somit immer nachvollziehbar. Softwareentwicklern ist es dadurch möglich, parallel und koordiniert an einem gemeinsamen Projekt zu arbeiten.
 
@@ -19,10 +19,9 @@ Der Status des Repository kann mit dem Befehl git status abgefragt werden. Diese
 ### Ein Repository klonen:
 Mit dem Befehl ```git clone <repository-url>``` legst Du eine lokale Kopie des Repository an. Beim Aufruf des Befehls wirst Du gegebenenfalls nach Deinem Nutzeraccount gefragt. Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH3 eingerichtet werden. Nach dem Klonen findest Du das Repository in dem dabei neu erstellten Ordner. Dort kannst Du nun Deine Abgabendateien versionieren und Branches verwalten.
 
-
 ## Nach dem Clonen:
 Um das Projekt setup fertig zu machen folgendes im Terminal laufen:\
 ```chmod +x setup.bash```\
 ```./setup.bash```
   
-Falls dies alles geklappt hat bist du ready Aufgabe01 zu versuchen
+Falls dies alles geklappt hat, bist du ready Aufgabe01 zu versuchen
