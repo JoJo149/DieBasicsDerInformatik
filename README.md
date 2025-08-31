@@ -1,4 +1,4 @@
-# Einführung in die Informatik
+# Einführung in die Informatik - WORK IN PROGRESS
 Dies ist ein Testprojekt für meinen kleinen Bruder, mit dem Ziel ihm die Grundlagen der Informatik näherzubringen.
 Dabei gehe ich auf die Grundlagen für Informatiker ein, welche sinnvoll sind schon vor Studienbeginn einmal gesehen zu haben.
 Ich werde versuchen so viel wie möglich auf die jeweiligen Konstrukte einzugehen ohne dabei einen Anfänger, für welchen dies der erste Kontakt mit dem Mysterium der Informatik ist zu überfordern.
@@ -122,9 +122,14 @@ cd ..
 #make directory: erstelle einen Ordner
 mkdir <Ordnername>
 ```
+### Ein Repository Forken:
+Forken bedeutet, dass du eine eigene Kopie eines Projekts auf GitHub (oder GitLab etc.) erstellst. Du kannst dann in deiner eigenen Version experimentieren, Dinge verändern oder verbessern – ohne das Original zu verändern.
+Stell dir vor, jemand hat ein cooles Projekt gebaut, und du möchtest darauf aufbauen oder es verbessern. Mit einem Fork bekommst du deine eigene Version, mit der du machen kannst, was du willst.
+Wenn du später möchtest, dass deine Änderungen ins Original übernommen werden, kannst du dem ursprünglichen Autor einen Pull Request schicken.
+Forke dieses Repository über den "Fork"-Button oben rechts und nach dem 
 
 ### Ein Repository klonen:
-Mit dem Befehl ```git clone <repository-url>``` legst du eine lokale Kopie des Repository an.
+Mit dem Befehl ```git clone https://github.com/IHR-NUTZERNAME/REPO-NAME.git``` legst du eine lokale Kopie des Repository an.
 Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt.
 Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH3 eingerichtet werden.
 Nach dem Klonen findest du das Repository in dem dabei neu erstellten Ordner, checke dies mit `ls`.
