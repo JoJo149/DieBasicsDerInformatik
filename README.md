@@ -103,6 +103,7 @@ brew install git
 - [C compiler](https://gcc.gnu.org/install/)
 - [git](https://git-scm.com/downloads)
 
+---
 </details>
 
 
@@ -122,11 +123,57 @@ cd ..
 #make directory: erstelle einen Ordner
 mkdir <Ordnername>
 ```
+
 ### Ein Repository Forken:
-Forken bedeutet, dass du eine eigene Kopie eines Projekts auf GitHub (oder GitLab etc.) erstellst. Du kannst dann in deiner eigenen Version experimentieren, Dinge verändern oder verbessern – ohne das Original zu verändern.
-Stell dir vor, jemand hat ein cooles Projekt gebaut, und du möchtest darauf aufbauen oder es verbessern. Mit einem Fork bekommst du deine eigene Version, mit der du machen kannst, was du willst.
+<details>
+<summary>Falls dies dein erster Kontakt mit git ist, Klicke mich an</summary>
+
+Für dieses Projekt ist es am einfachsten sich ein Profil bei [Github](https://github.com/), falls du dies noch nicht getan hast.
+Nun solltest du bei git im Terminal, einstellen welche Email und Name bei den Commits angegeben werden soll:
+```
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+```
+
+Als kleiner Tipp: richte dir SSH ein, sonst musst du jedes Mal dein Passwort angeben, wenn du etwas pushen willst.
+Dafür solltest du erst einmal ein Tool welches ssh keys generieren kann wie openSSH installieren mit deinem Paketmanager.
+
+<div style="display: flex; gap: 20px;">
+<div style="flex: 1;">
+<strong>Für Ubuntu</strong>
+<pre><code class="language-bash">
+sudo apt-get install openssh-client
+</code></pre>
+</div>
+<div style="flex: 1;">
+<strong>Für Mac</strong>
+<pre><code class="language-bash">
+brew install openssh
+</code></pre>
+</div>
+</div>
+
+Nun kannst du einen ssh-key in deinem Terminal generieren:
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+After generating just ls where your key is and print the file using `cat` into the terminal to then copy this key into ur settings from GitHub:
+```
+ls ~/.ssh/*.pub
+cat ~/.ssh/id_ed25519.pub
+```
+---
+
+</details>
+
+Forken bedeutet, dass du eine eigene Kopie eines Projekts auf GitHub (oder GitLab etc.) erstellst.
+Du kannst dann in deiner eigenen Version experimentieren, Dinge verändern oder verbessern – ohne das Original zu verändern.
+
+Stell dir vor, jemand hat ein cooles Projekt gebaut, und du möchtest darauf aufbauen oder es verbessern.
+Mit einem Fork bekommst du deine eigene Version, mit der du machen kannst, was du willst.
 Wenn du später möchtest, dass deine Änderungen ins Original übernommen werden, kannst du dem ursprünglichen Autor einen Pull Request schicken.
-Forke dieses Repository über den "Fork"-Button oben rechts und nach dem 
+
+Damit du auf deiner ganz eigenen Version Arbeiten kannst, Forke dieses Repository über den "Fork"-Button oben rechts. 
 
 ### Ein Repository klonen:
 Mit dem Befehl ```git clone https://github.com/IHR-NUTZERNAME/REPO-NAME.git``` legst du eine lokale Kopie des Repository an.
