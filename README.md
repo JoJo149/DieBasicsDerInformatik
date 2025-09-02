@@ -9,8 +9,8 @@ Dabei werden bestimmte Aufgaben vor allem am Anfang ein Terminal benötigen.
 Ich werde so gut wie möglich versuchen beim Nutzen der Befehle diese auch zu erklären, bei Mac will ich noch erwähnen, dass es empfehlenswert ist [Iterm](https://iterm2.com/) zu nutzen.
 
 ## Start ?
-Naja bevor wir mit irgendetwas starten müssen wir erst mal die Tools, welche man benötigt, um das Projekt auszuführen, installieren.\
-Die Kurzfassung der benötigten Programme siehst du in der Liste von [Programmen](#dependencies), falls du schon weißt wie man mit Paketmanagern umgeht kannst du diese direkt installieren.
+Na ja bevor wir mit irgendetwas starten müssen wir erst mal die Tools, welche man benötigt, um das Projekt auszuführen, installieren.\
+Die Kurzfassung der benötigten Programme siehst du in der Liste von [Programmen](#dependencies), falls du schon weißt, wie man mit Paketmanagern umgeht, kannst du diese direkt installieren.
 Im Folgenden werde ich auf die Nutzung von Paketmanagers und ähnlichem eingehen und deren Anwendung erklären.
 
 ### package management software
@@ -26,13 +26,13 @@ Nun also zu der Entscheidung welchen Paketmanager du nutzen solltest.
 Bei den meisten Linux Distros ist ein paket manager mit geliefert, falls du nicht weißt, welcher bei deinem Distro enthalten ist, solltest du Google mal fragen.
 Bei Mac hingegen würde ich die Installation vom Paketmanager [homebrew](https://brew.sh/) stark empfehlen.
 
-#### Wie installiere ich nun also Sachen mit meinem Paket Manager ?
+#### Wie installiere ich nun also Sachen mit meinem Paket Manager?
 Ich werde im Folgenden nun den Ablauf zum Installieren der benötigten Programme beschreiben, wobei ich nur die Befehle für Ubuntu und Mac OS direkt erwähne, der Ablauf sollte jedoch für die anderen Linux paket manager ähnlich sein.
 
 Nun also zu unserer ersten Installation: Python\
 Python nutzen wir für die Abgabetests, um zu überprüfen, dass du eine Python version installiert hast schreibe folgendes in dein Terminal:\
 `python3 -V` \
-Falls dies nicht etwas wie: `Python 3.13.2` Ausgibt ist das auch kein Problem.
+Falls dies nicht etwas wie: `Python 3.13.2` Ausgibt, ist das auch kein Problem.
 Wir wollen nämlich eigentlich den paket manager für Python installieren `pip`, da python für diesen eine Voraussetzung ist installieren die meisten paket manager Python einfach direkt mit, wenn man pip installiert:
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
@@ -176,7 +176,7 @@ Wenn du später möchtest, dass deine Änderungen ins Original übernommen werde
 Damit du auf deiner ganz eigenen Version Arbeiten kannst, **Forke dieses Repository** über den "Fork"-Button oben rechts. 
 
 ### Ein Repository klonen:
-Klone nun dein eigenes Projekt(also deinem Fork) mit dem Befehl ```git clone https://github.com/IHR-NUTZERNAME/REPO-NAME.git``` an.
+Klone nun dein eigenes Projekt(also deinem Fork) mit dem Befehl ```git clone <Adresse vom grünen code button oben rechts>``` an.
 Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt, ausser du hast SSH eingerichtet, dann kannst du hier bei der Adresse vom code button die ssh Adresse verwenden.
 Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH eingerichtet werden.
 Nach dem Klonen findest du das Repository in dem dabei neu erstellten Ordner, checke dies mit `ls`.
@@ -186,7 +186,7 @@ Dort kannst du jetzt deine Abgabendateien versionieren und Branches verwalten.
 Um das Projektsetup zu vollenden, musst du noch folgendes im Terminal ausführen:\
 ```chmod +x setup.bash```\
 ```./setup.bash```\
-Stelle dabei sicher, dass du im Projektordner bist und wenn du `ls` Aufrufst die Datei `setup.bash` angezeigt wird.
+Stelle dabei sicher, dass du im Projektordner bist und wenn du `ls` aufrufst die Datei `setup.bash` angezeigt wird.
 
 Falls dies alles geklappt hat und das Programm keine Fehler ausgespuckt hat, bist du ready dich an `Aufgabe00` zu versuchen.
 
