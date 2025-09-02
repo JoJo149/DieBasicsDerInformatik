@@ -52,10 +52,10 @@ brew install python3
 </div>
 
 Nachdem wir den paket manager für python installiert haben, wollen wir auch gleich ein Paket mit diesem Installieren:\
-`pip install pytest`
+`pip install pytest` oder `pip3 install pytest`, unter Mac OS musst du vielleicht `brew install pytest`nutzen
 
 Nun benötigen wir noch einen C-Compiler damit du auch die Aufgaben erledigen kannst.
-Was genau das ist und wie man sowas benutzt lernst du in den Folgenden Aufageben noch.\
+Was genau das ist und wie man sowas benutzt lernst du in den folgenden Aufgaben noch.\
 Wir nutzen als C-Compiler in diesem Beispiel gcc(GNU Compiler Collection):
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
