@@ -178,7 +178,7 @@ Damit du auf deiner ganz eigenen Version Arbeiten kannst, **Forke dieses Reposit
 ### Ein Repository klonen:
 Klone nun dein eigenes Projekt(also deinem Fork) mit dem Befehl ```git clone https://github.com/IHR-NUTZERNAME/REPO-NAME.git``` an.
 Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt, ausser du hast SSH eingerichtet, dann kannst du hier bei der Adresse vom code button die ssh Adresse verwenden.
-Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH3 eingerichtet werden.
+Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH eingerichtet werden.
 Nach dem Klonen findest du das Repository in dem dabei neu erstellten Ordner, checke dies mit `ls`.
 Dort kannst du jetzt deine Abgabendateien versionieren und Branches verwalten.
 
