@@ -131,8 +131,8 @@ mkdir <Ordnername>
 Für dieses Projekt ist es am einfachsten sich ein Profil bei [Github](https://github.com/), falls du dies noch nicht getan hast.
 Nun solltest du bei git im Terminal, einstellen welche Email und Name bei den Commits angegeben werden soll:
 ```
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 ```
 
 Als kleiner Tipp: richte dir SSH ein, sonst musst du jedes Mal dein Passwort angeben, wenn du etwas pushen willst.
