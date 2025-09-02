@@ -8,6 +8,22 @@ Dieses Tutorial/Einführung ist nur für Linux oder OSX (also Mac OS) user gesch
 Dabei werden bestimmte Aufgaben vor allem am Anfang ein Terminal benötigen.
 Ich werde so gut wie möglich versuchen beim Nutzen der Befehle diese auch zu erklären, bei Mac will ich noch erwähnen, dass es empfehlenswert ist [Iterm](https://iterm2.com/) zu nutzen.
 
+# DA WORK IN PROGRESS
+
+Falls auf dem Main repository, also diesem, etwas verändert wird, was du dir auf deine Version vom Repository holen willst, ist hier eine Anleitung dafür:\
+dafür einmalig den Upstream festlegen:
+```
+git remote add upstream https://github.com/JoJo149/DieBasicsDerInformatik.git
+```
+
+um nun changes vom upstream zu pullen/fetchen und danach in dein lokalen Branch zu mergen/rebase:
+```
+git fetch upstream
+git checkout main
+git rebase upstream/main
+git push origin main
+```
+
 ## Start ?
 Naja bevor wir mit irgendetwas starten müssen wir erst mal die Tools, welche man benötigt, um das Projekt auszuführen, installieren.\
 Die Kurzfassung der benötigten Programme siehst du in der Liste von [Programmen](#dependencies), falls du schon weißt wie man mit Paketmanagern umgeht kannst du diese direkt installieren.
