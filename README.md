@@ -173,14 +173,14 @@ Stell dir vor, jemand hat ein cooles Projekt gebaut, und du möchtest darauf auf
 Mit einem Fork bekommst du deine eigene Version, mit der du machen kannst, was du willst.
 Wenn du später möchtest, dass deine Änderungen ins Original übernommen werden, kannst du dem ursprünglichen Autor einen Pull Request schicken.
 
-Damit du auf deiner ganz eigenen Version Arbeiten kannst, Forke dieses Repository über den "Fork"-Button oben rechts. 
+Damit du auf deiner ganz eigenen Version Arbeiten kannst, **Forke dieses Repository** über den "Fork"-Button oben rechts. 
 
 ### Ein Repository klonen:
-Mit dem Befehl ```git clone https://github.com/IHR-NUTZERNAME/REPO-NAME.git``` legst du eine lokale Kopie des Repository an.
-Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt.
+Klone nun dein eigenes Projekt(also deinem Fork) mit dem Befehl ```git clone https://github.com/IHR-NUTZERNAME/REPO-NAME.git``` an.
+Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt, ausser du hast SSH eingerichtet, dann kannst du hier bei der Adresse vom code button die ssh Adresse verwenden.
 Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH3 eingerichtet werden.
 Nach dem Klonen findest du das Repository in dem dabei neu erstellten Ordner, checke dies mit `ls`.
-Dort kannst du nun deine Abgabendateien versionieren und Branches verwalten.
+Dort kannst du jetzt deine Abgabendateien versionieren und Branches verwalten.
 
 ### Nach dem Clonen:
 Um das Projektsetup zu vollenden, musst du noch folgendes im Terminal ausführen:\
