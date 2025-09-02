@@ -8,22 +8,6 @@ Dieses Tutorial/Einführung ist nur für Linux oder OSX (also Mac OS) user gesch
 Dabei werden bestimmte Aufgaben vor allem am Anfang ein Terminal benötigen.
 Ich werde so gut wie möglich versuchen beim Nutzen der Befehle diese auch zu erklären, bei Mac will ich noch erwähnen, dass es empfehlenswert ist [Iterm](https://iterm2.com/) zu nutzen.
 
-# DA WORK IN PROGRESS
-
-Falls auf dem Main repository, also diesem, etwas verändert wird, was du dir auf deine Version vom Repository holen willst, ist hier eine Anleitung dafür:\
-dafür einmalig den Upstream festlegen:
-```
-git remote add upstream https://github.com/JoJo149/DieBasicsDerInformatik.git
-```
-
-um nun changes vom upstream zu pullen/fetchen und danach in dein lokalen Branch zu mergen/rebase:
-```
-git fetch upstream
-git checkout main
-git rebase upstream/main
-git push origin main
-```
-
 ## Start ?
 Naja bevor wir mit irgendetwas starten müssen wir erst mal die Tools, welche man benötigt, um das Projekt auszuführen, installieren.\
 Die Kurzfassung der benötigten Programme siehst du in der Liste von [Programmen](#dependencies), falls du schon weißt wie man mit Paketmanagern umgeht kannst du diese direkt installieren.
@@ -205,3 +189,20 @@ Um das Projektsetup zu vollenden, musst du noch folgendes im Terminal ausführen
 Stelle dabei sicher, dass du im Projektordner bist und wenn du `ls` Aufrufst die Datei `setup.bash` angezeigt wird.
 
 Falls dies alles geklappt hat und das Programm keine Fehler ausgespuckt hat, bist du ready dich an `Aufgabe00` zu versuchen.
+
+# DA WORK IN PROGRESS
+
+Falls auf dem main repository, also diesem, etwas verändert wird, was du dir auf deine Version vom Repository holen willst, ist hier eine Anleitung dafür:
+
+In einer Standardkonfiguration gibt es in der Regel einen origin(dein Fork) und einen Upstream-Remote – letzterer ist meist das Ursprungs Repository, zu dem du beitragen möchtest.\
+In unserem Fall willst du zwar nichts beitragen, aber updates vom Ursprungs Repository erhalten, dafür musst du einmalig den Upstream festlegen:
+```
+git remote add upstream https://github.com/JoJo149/DieBasicsDerInformatik.git
+```
+Um nun Veränderungen vom upstream zu pullen/fetchen und danach in dein lokalen Branch zu mergen/rebase(einfach gesagt schlau einfügen), führe die folgenden Befehle aus:
+```
+git fetch upstream
+git checkout main
+git rebase upstream/main
+git push origin main
+```
