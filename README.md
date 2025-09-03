@@ -8,6 +8,8 @@ Dieses Tutorial/Einführung ist nur für Linux oder OSX (also Mac OS) user gesch
 Dabei werden bestimmte Aufgaben vor allem am Anfang ein Terminal benötigen.
 Ich werde so gut wie möglich versuchen beim Nutzen der Befehle diese auch zu erklären, bei Mac will ich noch erwähnen, dass es empfehlenswert ist [Iterm](https://iterm2.com/) zu nutzen.
 
+Falls dies deine erste Nutzung von einem Terminal ist, kannst du dieses [cheatsheet](https://images.velog.io/images/hy9202/post/8f1f2c7e-4edf-49ec-9c9e-380ade1325a8/command-line-cheat-sheet-large01.png) als lookup table nutzen.
+
 ## Start ?
 Na ja bevor wir mit irgendetwas starten müssen wir erst mal die Tools, welche man benötigt, um das Projekt auszuführen, installieren.\
 Die Kurzfassung der benötigten Programme siehst du in der Liste von [Programmen](#dependencies), falls du schon weißt, wie man mit Paketmanagern umgeht, kannst du diese direkt installieren.
@@ -73,7 +75,7 @@ brew install gcc
 </div>
 
 Merkst du schon, wie viel Zeit du durch die Nutzung eines paket managers einsparst?\
-Nein ? Dann kannst du mal aus Spass, dich durch die unten verlinkte Installation vom C-Compiler durchklicken.
+Nein? Dann kannst du mal aus Spass, dich durch die unten verlinkte Installation vom C-Compiler durchklicken.
 
 Nun zum letzten Tool welches du benötigst: git\
 Git ist ein Versionierungungstool, wobei wir darauf in Aufgabe00 nochmal genauer eingehen werden.
@@ -108,7 +110,7 @@ brew install git
 
 
 # Start !
-Naja, fast haha. Wir müssen uns noch unser Projekt aus dem Internet auf die Festplatte holen.\
+Na ja, fast haha. Wir müssen uns noch unser Projekt aus dem Internet auf die Festplatte holen.\
 Dafür öffne erst einmal das Terminal und führe den Befehl `ls` aus.
 Dieser Befehl bedeutet list und listet, wie der Name schon vermuten lässt, alle Ordner und Dateien in deinem aktuellen Ordner auf.
 Jedes Unix basierte Dateisystem (also so gut wie alles ausser Windows) ist wie eine Wurzelstruktur aufgebaut, beginnend mit der sogenannten Root `/`.\
@@ -129,7 +131,7 @@ mkdir <Ordnername>
 <summary>Falls dies dein erster Kontakt mit git ist, Klicke mich an</summary>
 
 Für dieses Projekt ist es am einfachsten sich ein Profil bei [Github](https://github.com/), falls du dies noch nicht getan hast.
-Nun solltest du bei git im Terminal, einstellen welche Email und Name bei den Commits angegeben werden soll:
+Nun solltest du bei git im Terminal, einstellen welche E-Mail und Name bei den Commits angegeben werden soll:
 ```
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
@@ -157,11 +159,50 @@ Nun kannst du einen ssh-key in deinem Terminal generieren:
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-After generating just ls where your key is and print the file using `cat` into the terminal to then copy this key into ur settings from GitHub:
-```
-ls ~/.ssh/*.pub
+Nun musst du noch den SSH-Schlüssel zum SSH-Agenten hinzufügen.
+Dafür starten wir erst einmal den SSH-Agenten im Hintergrund: `eval "$(ssh-agent -s)"`\
+und fügen halt den Schlüssel mit folgenden Befehlen hinzu:
+<div style="display: flex; gap: 20px;">
+<div style="flex: 1;">
+<strong>Für Ubuntu</strong>
+<pre><code class="language-bash">
+ssh-add ~/.ssh/id_ed25519
+</code></pre>
+</div>
+<div style="flex: 1;">
+<strong>Für Mac</strong>
+<pre><code class="language-bash">
+open ~/.ssh/config
+# wenn die Datei nicht existiert:
+touch ~/.ssh/config
+# Öffne deine ~/.ssh/config-Datei
+# Kopiere das Folgende rein
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+# als letztes führe aus:
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+</code></pre>
+</div>
+</div>
+
+Nach diesen Schritten sind wir bereit den Key zu unserem GitHub profil hinzuzufügen.
+Wir nutzen `cat` um unseren Key ins Terminal zu Printen:
+```bash
 cat ~/.ssh/id_ed25519.pub
+# das sollte folgendes Auswerfen:
+ssh-ed25519  ___DEIN_KEY___  Kommentar
 ```
+Auf GitHub klicken Sie auf Ihr Profilbild in der oberen rechten Ecke > Klicken Sie im Dropdown-Menü auf „Einstellungen“.
+Klicken Sie in der Seitenleiste mit den Benutzereinstellungen auf der linken Seite auf „SSH- und GPG-Schlüssel“.
+Klicken Sie auf die grüne Schaltfläche „Neuer SSH-Schlüssel“ und geben Sie im Feld „Titel“ einen aussagekräftigen Namen für Ihren Schlüssel ein (z. B. „persönliches MacBook Pro“).
+Wähle bei dem Dropdown-Menü Authentifizierung aus.\
+Fügen Sie den kopierten Inhalt (also `___DEIN_KEY___` ) vom öffentlichen SSH-Schlüssels in das Feld „Schlüssel“ ein und klicke den ‘Add SSH key’ button.
+Bei dem ersten nutzen wirst du gefragt: `Are you sure you want to continue connecting`.
+Stellen Sie sicher, dass der Fingerabdruck des Schlüssels mit dem RSA-Fingerabdruck des öffentlichen Schlüssels von Github übereinstimmt, und geben Sie dann „yes“ ein.
+Damit ist alles fertig eingerichtet.\
+[source](https://docs.github.com/de/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac)
 ---
 
 </details>
@@ -176,14 +217,15 @@ Wenn du später möchtest, dass deine Änderungen ins Original übernommen werde
 Damit du auf deiner ganz eigenen Version Arbeiten kannst, **Forke dieses Repository** über den "Fork"-Button oben rechts. 
 
 ### Ein Repository klonen:
-Klone nun dein eigenes Projekt(also deinem Fork) mit dem Befehl ```git clone <Adresse vom grünen code button oben rechts>``` an.
+Klone nun dein eigenes Projekt (also deinem Fork) mit dem Befehl ```git clone <Adresse vom grünen code button oben rechts>``` an.
 Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt, ausser du hast SSH eingerichtet, dann kannst du hier bei der Adresse vom code button die ssh Adresse verwenden.
 Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH eingerichtet werden.
 Nach dem Klonen findest du das Repository in dem dabei neu erstellten Ordner, checke dies mit `ls`.
 Dort kannst du jetzt deine Abgabendateien versionieren und Branches verwalten.
 
 ### Nach dem Clonen:
-Um das Projektsetup zu vollenden, musst du noch folgendes im Terminal ausführen:\
+
+Um das Projektsetup zu vollenden, musst du noch mein setup bash file ausführen. Dabei macht der erste Befehl es zu einem executable und der zweite führt es aus:\
 ```chmod +x setup.bash```\
 ```./setup.bash```\
 Stelle dabei sicher, dass du im Projektordner bist und wenn du `ls` aufrufst die Datei `setup.bash` angezeigt wird.
@@ -194,12 +236,12 @@ Falls dies alles geklappt hat und das Programm keine Fehler ausgespuckt hat, bis
 
 Falls auf dem main repository, also diesem, etwas verändert wird, was du dir auf deine Version vom Repository holen willst, ist hier eine Anleitung dafür:
 
-In einer Standardkonfiguration gibt es in der Regel einen origin(dein Fork) und einen Upstream-Remote – letzterer ist meist das Ursprungs Repository, zu dem du beitragen möchtest.\
+In einer Standardkonfiguration gibt es in der Regel einen origin (dein Fork) und einen Upstream-Remote – letzterer ist meist das Ursprungs Repository, zu dem du beitragen möchtest.\
 In unserem Fall willst du zwar nichts beitragen, aber updates vom Ursprungs Repository erhalten, dafür musst du einmalig den Upstream festlegen:
 ```
 git remote add upstream https://github.com/JoJo149/DieBasicsDerInformatik.git
 ```
-Um nun Veränderungen vom upstream zu pullen/fetchen und danach in dein lokalen Branch zu mergen/rebase(einfach gesagt schlau einfügen), führe die folgenden Befehle aus:
+Um nun Veränderungen vom upstream zu pullen/fetchen und danach in dein lokalen Branch zu mergen/rebase (einfach gesagt schlau einfügen), führe die folgenden Befehle aus:
 ```
 git fetch upstream
 git checkout main
