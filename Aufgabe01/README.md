@@ -1,47 +1,100 @@
-# Aufgabe 01
+# Hello, World!
 
-Diese Aufgabe beschäftigt sich mit den Basics von Git, sowie einem einfachen Ausführen eines C-Programms.
-Für diese Aufgabe würde ich das Nutzen von einem Terminal sowie einem Texteditoren gegenüber einer IDE empfehlen.
+Also. Du willst Programmieren lernen.\
+Und was macht man als erstes? Richtig: man schreibt ein **Hello World** Programm.
+Weil’s einfach ist. Weil’s jeder macht. Weil’s so eine Art Initiationsritual ist.
 
-## Arbeiten mit verteilten Repositories
-### Verwalten von Branches
-Mithilfe von Branches können verschiedene Entwicklungen parallel betrieben und später wieder zusammengefügt werden (Merge). In der Lehrveranstaltung nutzen wir Branches jedoch ausschließlich zur Trennung der einzelnen Abgaben. 
-Ein neuer Branch wird immer vom letzten Commit (Zustand) des aktiven Branches abgezweigt. 
-Mit dem Befehl ```git branch <branch-name>``` kann ein Branch erzeugt und mit ```git branch -d <branch-name>``` wieder gelöscht werden.
-Eine Übersicht aller verfügbaren Branches erhält man mit ```git branch -a```.
-Den jeweils aktiven Branch kann man mit dem Befehl ```git checkout <branch-name>``` wechseln.
+---
+## Das Programm
 
-Nun versuche einmal einfach den Inhalt von egal.txt an zu passen und diesen zu adden, zu commiten und zu pushen.
+Hier der Klassiker:
+```c++
+#include <stdio.h>
 
+int main(void)
+{
+    printf(“Hello, World!\n“);
+    return 0;
+}
+```
+Speicher das in einer Datei, sagen wir mal hello.c.
+
+---
+## Der Programmierablauf
+
+Du schreibst Quellcode → speicherst ihn in hello.c.\
+Quellcode ist für Menschen lesbar (naja, für manche und hoffentlich bald dich).
+
+Computer hingegen? Die haben null Bock auf dein printf(). Die sprechen nur Maschinencode (so Nullen und Einsen, sehr langweilig binär).
+
+---
+## Kompilierung
+
+Also brauchen wir einen Übersetzer: den Compiler.\
+Der Compiler nimmt also dein hello.c und übersetzt es in Maschinencode.\
+<details>
+<summary>Wenn man es Genau nimmt...</summary>
+
+Um genauer zu sein, übersetzt der Compiler C in Assemblercode danach übernimmt der Assembler und übersetzt Assemblercode in Maschinensprache letztendlich kommt noch der linker zur Nachbearbeitung/Kombination verschiedener Module.\
+Am wichtigsten ist es zu verstehen, dass C als Sprache lesbarer und portabler ist als Maschinencode(auch als Assembly), welcher CPU-abhängig ist.
+---
+</details>
+
+Beispiel mit gcc (GNU Compiler Collection):
+```
+gcc hello.c -o hello
+```
+- `hello.c`: dein Quellcode
+
+- `-o hello`: sagt „mach mir eine ausführbare Datei mit dem Namen hello“
+
+Danach hast du eine Datei `hello`. (Ja, auf Windows heißt das dann hello.exe.)
+
+---
+## Ausführung
+
+Und dann kommt der magische Moment:
+```bash
+./hello
+```
+Bämm. Ausgabe:
+```bash
+Hello, World!
+```
+Und du denkst: „Wow, ich habe soeben mit einem Computer kommuniziert.“\
+(Okay, eigentlich hast du ihm nur gesagt, er soll was auf den Bildschirm schreiben. Aber hey, Baby-Steps!)
+
+---
+## Der Programmablauf
+
+Als du die Binärdatei nun also ausgeführt hast, ist im Groben sowas passiert:
+1. Dein Programm startet irgendwo im Betriebssystem.
+2. Das Betriebssystem sagt: „Ok, ab in die `main()`-Funktion, viel Spaß.“
+3. Dein `printf()`-Aufruf geht los: „Hey, Standard Output, bitte Hello, world! ausspucken!“
+4. Der Text taucht auf deinem Bildschirm auf.
+5. `main()` gibt 0 zurück → das ist so der Code für „Alles easy“.
+6. Das Betriebssystem nickt zufrieden und macht wieder sein Ding.
+
+---
 ## Aufgabe 01.1
-
-Falls du alles richtig gemacht hast, hast du gerade eine Fehlermeldung bekommen.
-Um dies zu Beheben musst du dein gelerntes Wissen nun Anwenden:
-
-- Stelle sicher, dass Du Dich im master oder main-Branch Deines Repository befindest (```git status```)
-- Erstelle einen neuen Branch mit dem Namen: ```local-branch```
-- Wechsel in den neuen Branch
-- Erstelle nun die Datei```test.txt``` im Ordner von Aufgabe01 und verändere sie, wie du willst.
-- adde die Datei, erzeuge einen Commit und lasse dir das Commit-Log ausgeben (```git log```).
-- Wechsel zurück in den master oder main-Branch. Lasse Dir das Commit-Log ausgeben und vergleiche es mit der vorherigen Ausgabe
-
-## Aufgabe 01.2
-
-Schreibe ein C-Programm, welches auf dem Terminal mittels printf den Text ```Hallo, <Name>!``` ausgibt.\
-Die Ausgabe soll auf einer separaten Zeile erfolgen.\
-Eine beispielhafte Benutzung des Programms liefe ab wie in Listing 1 gezeigt:\
-Listing 1: Kompilieren und Aufruf des Programms
+Nun also zu deiner Aufgabe, wenn du alles gut verstanden hast, sollte die ein klax für dich sein.
+Schreibe ein C-Programm in `solution.c`, welches auf dem Terminal mittels printf den Text ```Hallo, <Name>!``` ausgibt.\
+Wichtig ist zu wissen, dass die Binärdatei, also deine Lösung `solution` heißen muss.\
+Auch soll die Ausgabe auf einer separaten Zeile erfolgen bzw. das Terminal erst eine Zeile darunter wieder übernehmen.
+Eine beispielhafte Benutzung des Programms liefe wiefolgt ab:
 ```
 > clang -std=c11 -Wall -g solution.c -o solution
 > ./solution
-Hallo , Jonas!
+Hallo, Jonas!
 ```
 
 Gehe sicher, dass Deine Aufgabe dabei die folgenden Bedingungen erfüllt:
-- Die Ein- und Ausgabebibliothek stdio.h wird geladen.
-- Die Funktion main ist definiert.
-- printf wird zur Ausgabe von Text benutzt.
-- kein White Space am Anfang oder Ende oder zwischen der neuen Zeile und !
+- Die Ein- und Ausgabebibliothek `stdio.h` wird korrekt geladen.
+- Die Funktion `main` ist definiert.
+- `printf` wird zur Ausgabe von Text benutzt.
+- **kein** White Space am Anfang oder Ende oder zwischen der **neuen Zeile und !**.
 
-Die Datei kompiliert ohne Fehler und Warnungen beim Aufruf von:\
-```clang -std=c11 -Wall -g solution.c -o solution```
+Die Datei sollte ohne Fehler und Warnungen kompilieren beim Aufruf von:
+```
+clang -std=c11 -Wall -g solution.c -o solution
+```
