@@ -16,7 +16,6 @@ check git
 ROOT_DIR=$(git rev-parse --show-toplevel)
 cd "$ROOT_DIR"
 
-#TODO wirte checkout hook so pytest works like intended
 cat <<'EOF' > .git/hooks/post-checkout
 #!/bin/bash
 RED='\033[0;31m'
@@ -36,6 +35,7 @@ fi
 echo "✅ post-checkout cleanup finished. Working tree is clean."
 EOF
 
+chmod +x .git/hooks/post-checkout
 
 cat <<'EOF' > .git/hooks/pre-push
 #!/bin/bash
@@ -88,4 +88,5 @@ echo ""
 EOF
 
 chmod +x .git/hooks/pre-push
+
 echo "✅ All dependencies present and git environment implemented."
