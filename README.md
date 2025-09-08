@@ -39,7 +39,7 @@ Wir wollen nämlich eigentlich den paket manager für Python installieren `pip`,
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
 <strong>Für Ubuntu</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 sudo apt update
 sudo apt -y upgrade
 sudo apt install -y python3-pip
@@ -47,7 +47,7 @@ sudo apt install -y python3-pip
 </div>
 <div style="flex: 1;">
 <strong>Für Mac</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 brew install python3
 </code></pre>
 </div>
@@ -62,13 +62,13 @@ Wir nutzen als C-Compiler in diesem Beispiel gcc(GNU Compiler Collection):
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
 <strong>Für Ubuntu</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 sudo apt install build-essential
 </code></pre>
 </div>
 <div style="flex: 1;">
 <strong>Für Mac</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 brew install gcc
 </code></pre>
 </div>
@@ -82,13 +82,13 @@ Git ist ein Versionierungungstool, wobei wir darauf in Aufgabe00 nochmal genauer
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
 <strong>Für Ubuntu</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 sudo apt install git-all
 </code></pre>
 </div>
 <div style="flex: 1;">
 <strong>Für Mac</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 brew install git
 </code></pre>
 </div>
@@ -146,13 +146,13 @@ Dafür solltest du erst einmal ein Tool welches ssh keys generieren kann wie ope
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
 <strong>Für Ubuntu</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 sudo apt-get install openssh-client
 </code></pre>
 </div>
 <div style="flex: 1;">
 <strong>Für Mac</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 brew install openssh
 </code></pre>
 </div>
@@ -168,13 +168,13 @@ und fügen halt den Schlüssel mit folgenden Befehlen hinzu:
 <div style="display: flex; gap: 20px;">
 <div style="flex: 1;">
 <strong>Für Ubuntu</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 ssh-add ~/.ssh/id_ed25519
 </code></pre>
 </div>
 <div style="flex: 1;">
 <strong>Für Mac</strong>
-<pre><code class="language-bash">
+<pre><code class="language-console">
 open ~/.ssh/config
 # wenn die Datei nicht existiert:
 touch ~/.ssh/config
