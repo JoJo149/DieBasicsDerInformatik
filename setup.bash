@@ -22,12 +22,20 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # fertig erstellte Aufgaben Branches
-exercise_branches=("'main'" "'master'" "'aufgabe-01'")
+exercise_branches=("main" "master" "aufgabe-01")
+
+current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 is_allowed=false
-current_branch=$(git rev-parse --abbrev-ref HEAD)
-if [[ " ${allowed_branches[*]} " == "$current_branch" ]]; then
-    echo "Branch '$current_branch' is a correct Branch."
+for branch in "${exercise_branches[@]}"; do
+    if [[ "$current_branch" == "$branch" ]]; then
+        is_allowed=true
+        break
+    fi
+done
+
+if $is_allowed; then
+    echo "Branch '$current_branch' is allowed."
 else
     printf "${RED}Abgabe-error: You are on branch '$current_branch' and not on an 'aufgabe-__' or main branch.\n${NC}"
     exit 1
