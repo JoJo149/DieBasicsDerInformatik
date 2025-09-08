@@ -4,7 +4,10 @@
 .DS_Store
 .vscode
 .vs
+
 **/__pycache__/
+__pycache__/
+.pytest_cache/
 
 # Build Files 
 cmake-build-*/
