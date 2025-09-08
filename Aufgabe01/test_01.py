@@ -11,14 +11,10 @@ def get_git_root() -> Path:
     )
     return Path(result.stdout.strip())
 
-def run_solution_binary():
+def run_solution_binary(binary_path):
     """
     Run the compiled 'solution' binary and return its output.
     """
-
-    binary_path = Path(get_git_root().__str__() + "/Aufgabe01/solution")  # replace with your binary name
-    if not binary_path.is_file():
-        raise FileNotFoundError(f"{binary_path} does not exist")
 
     result = subprocess.run(
         [str(binary_path)],   # run the binary
@@ -30,8 +26,17 @@ def run_solution_binary():
 
     return result.stdout
 
+def test_solution_exists():
+    binary_path = Path(get_git_root().__str__() + "/Aufgabe01/solution")  # replace with your binary name
+    if not binary_path.is_file():
+        raise FileNotFoundError(f"{binary_path} does not exist")#
+
 def test_solution_output():
-    output = run_solution_binary()
+    binary_path = Path(get_git_root().__str__() + "/Aufgabe01/solution")  # replace with your binary name
+    if not binary_path.is_file():
+        raise FileNotFoundError(f"{binary_path} does not exist")
+
+    output = run_solution_binary(binary_path)
     assert output.startswith("Hallo, ") and output.endswith("!\n"),(
             f"Solution Binary does not print correctly"
     )

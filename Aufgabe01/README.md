@@ -13,7 +13,7 @@ Hier der Klassiker:
 
 int main(void)
 {
-    printf(“Hello, World!\n“);
+    printf("Hello, World!\n");
     return 0;
 }
 ```
@@ -83,7 +83,7 @@ Wichtig ist zu wissen, dass die Binärdatei, also deine Lösung `solution` heiß
 Auch soll die Ausgabe auf einer separaten Zeile erfolgen bzw. das Terminal erst eine Zeile darunter wieder übernehmen.
 Eine beispielhafte Benutzung des Programms liefe wiefolgt ab:
 ```
-> clang -std=c11 -Wall -g solution.c -o solution
+> gcc -std=c11 -Wall -g solution.c -o solution
 > ./solution
 Hallo, Jonas!
 ```
@@ -96,5 +96,5 @@ Gehe sicher, dass Deine Aufgabe dabei die folgenden Bedingungen erfüllt:
 
 Die Datei sollte ohne Fehler und Warnungen kompilieren beim Aufruf von:
 ```
-clang -std=c11 -Wall -g solution.c -o solution
+gcc -std=c11 -Wall -g solution.c -o solution
 ```
