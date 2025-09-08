@@ -25,8 +25,8 @@ NC='\033[0m' # No Color
 exercise_branches=("main" "master" "aufgabe-01")
 
 is_allowed=false
-
-if [[ " ${allowed_branches[*]} " == *" $current_branch "* ]]; then
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ " ${allowed_branches[*]} " == "$current_branch" ]]; then
     echo "Branch '$current_branch' is a correct Branch."
 else
     printf "${RED}Abgabe-error: You are on branch '$current_branch' and not on an 'aufgabe-__' or main branch.\n${NC}"
