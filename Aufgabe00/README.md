@@ -1,4 +1,4 @@
-# Aufgabe 00
+# Aufgabe 00 - NOT Ready
 
 Diese Aufgabe beschäftigt sich mit den Basics von Git.
 Für diese Aufgabe würde ich das Nutzen von einem Terminal sowie einem Texteditoren gegenüber einer IDE empfehlen.
