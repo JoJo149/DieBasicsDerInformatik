@@ -119,13 +119,13 @@ Als Nächstes solltest du versuchen in einen Ordner zu navigieren, in welchen du
 # list
 ls
 # change directory: also gehe in Ordner
-cd <Ordnername>
+cd Ordnername
 # cd zu home Ordner (meist ein guter Anfang für seine eigene Ordnerstruktur)
 cd ~
 # gehe in den nächst höheren (Parent) Ordner
 cd ..
 # make directory: erstelle einen Ordner
-mkdir <Ordnername>
+mkdir Ordnername
 ```
 Siehe auch: [cheatsheet](https://images.velog.io/images/hy9202/post/8f1f2c7e-4edf-49ec-9c9e-380ade1325a8/command-line-cheat-sheet-large01.png)
 
