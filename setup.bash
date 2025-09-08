@@ -22,7 +22,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # fertig erstellte Aufgaben Branches
-exercise_branches=("main" "master" "aufgabe-00" "aufgabe-01")
+exercise_branches=("main" "master" "aufgabe-01")
 
 is_allowed=false
 
