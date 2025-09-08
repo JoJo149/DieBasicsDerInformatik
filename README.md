@@ -1,4 +1,4 @@
-# Einführung in die Informatik - WORK IN PROGRESS
+# Einführung in die Informatik
 Dies ist ein Testprojekt für meinen kleinen Bruder, mit dem Ziel ihm die Grundlagen der Informatik näherzubringen.
 Dabei gehe ich auf die Grundlagen für Informatiker ein, welche sinnvoll sind schon vor Studienbeginn einmal gesehen zu haben.
 Ich werde versuchen so viel wie möglich auf die jeweiligen Konstrukte einzugehen ohne dabei einen Anfänger, für welchen dies der erste Kontakt mit dem Mysterium der Informatik ist zu überfordern.
@@ -116,15 +116,18 @@ Dieser Befehl bedeutet list und listet, wie der Name schon vermuten lässt, alle
 Jedes Unix basierte Dateisystem (also so gut wie alles ausser Windows) ist wie eine Wurzelstruktur aufgebaut, beginnend mit der sogenannten Root `/`.\
 Als Nächstes solltest du versuchen in einen Ordner zu navigieren, in welchen du das Repository reinkopieren willst, hilfreiche Befehle dafür sind:
 ```bash
-#list
+# list
 ls
-#change directory: also gehe in Ordner
+# change directory: also gehe in Ordner
 cd <Ordnername>
-#gehe in den nächst höheren (Parent) Ordner
+# cd zu home Ordner (meist ein guter Anfang für seine eigene Ordnerstruktur)
+cd ~
+# gehe in den nächst höheren (Parent) Ordner
 cd ..
-#make directory: erstelle einen Ordner
+# make directory: erstelle einen Ordner
 mkdir <Ordnername>
 ```
+Siehe auch: [cheatsheet](https://images.velog.io/images/hy9202/post/8f1f2c7e-4edf-49ec-9c9e-380ade1325a8/command-line-cheat-sheet-large01.png)
 
 ### Ein Repository Forken:
 <details>
@@ -219,22 +222,26 @@ Wenn du später möchtest, dass deine Änderungen ins Original übernommen werde
 Damit du auf deiner ganz eigenen Version Arbeiten kannst, **Forke dieses Repository** über den "Fork"-Button oben rechts. 
 
 ### Ein Repository klonen:
-**Klone nun dein eigenes Projekt** (also deinem Fork) mit dem Befehl ```git clone <Adresse vom grünen code button oben rechts>``` an.
+Klone nun dein **eigenes** Projekt (also deinem Fork) mit dem Befehl ```git clone <Adresse vom grünen code button oben rechts>``` an.
 Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt, ausser du hast SSH eingerichtet, dann kannst du hier bei der Adresse vom code button die ssh Adresse verwenden.
 Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH eingerichtet werden.
 Nach dem Klonen findest du das Repository in dem dabei neu erstellten Ordner, checke dies mit `ls`.
 Dort kannst du jetzt deine Abgabendateien versionieren und Branches verwalten.
 
 ### Nach dem Clonen:
-
-Um das Projektsetup zu vollenden, musst du noch mein **setup bash file ausführen**. Dabei macht der erste Befehl es zu einem executable und der zweite führt es aus:\
-```chmod +x setup.bash```\
-```./setup.bash```\
+Da du für den nächsten Schritt eine Datei ausführen musst, empfehle ich dir kurz in das [setup file](setup.bash) zu schauen um zu überprüfen, was es macht.
+(Am besten einfach die Kommentare lesen und Befehle die suspekt aussehen googeln)\
+Da du nun also überprüft hast, dass das setup kein Virus ist oder mir vertraust kannst du nun das Projektsetup vollenden, dafür musst du mein **setup bash file ausführen**. Dabei macht der erste Befehl es zu einem executable und der zweite führt es aus:
+```
+chmod +x setup.bash
+./setup.bash
+```
 Stelle dabei sicher, dass du im Projektordner bist und wenn du `ls` aufrufst die Datei `setup.bash` angezeigt wird.
 
 Falls dies alles geklappt hat und das Programm keine Fehler ausgespuckt hat, bist du ready dich an `Aufgabe00` zu versuchen.
 Schaue dafür einfach in den Ordner `Aufgabe00`.
 
+---
 # DA WORK IN PROGRESS
 
 Falls auf dem main repository, also diesem, etwas verändert wird, was du dir auf deine Version vom Repository holen willst, ist hier eine Anleitung dafür:
