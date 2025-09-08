@@ -194,6 +194,7 @@ cat ~/.ssh/id_ed25519.pub
 # das sollte folgendes Auswerfen:
 ssh-ed25519  ___DEIN_KEY___  Kommentar
 ```
+
 Auf GitHub klicken Sie auf Ihr Profilbild in der oberen rechten Ecke > Klicken Sie im Dropdown-Menü auf „Einstellungen“.
 Klicken Sie in der Seitenleiste mit den Benutzereinstellungen auf der linken Seite auf „SSH- und GPG-Schlüssel“.
 Klicken Sie auf die grüne Schaltfläche „Neuer SSH-Schlüssel“ und geben Sie im Feld „Titel“ einen aussagekräftigen Namen für Ihren Schlüssel ein (z. B. „persönliches MacBook Pro“).
@@ -202,7 +203,8 @@ Fügen Sie den kopierten Inhalt (also `___DEIN_KEY___` ) vom öffentlichen SSH-S
 Bei dem ersten nutzen wirst du gefragt: `Are you sure you want to continue connecting`.
 Stellen Sie sicher, dass der Fingerabdruck des Schlüssels mit dem RSA-Fingerabdruck des öffentlichen Schlüssels von Github übereinstimmt, und geben Sie dann „yes“ ein.
 Damit ist alles fertig eingerichtet.\
-[source](https://docs.github.com/de/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac)
+[Quelle](https://docs.github.com/de/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac)
+
 ---
 
 </details>
@@ -217,7 +219,7 @@ Wenn du später möchtest, dass deine Änderungen ins Original übernommen werde
 Damit du auf deiner ganz eigenen Version Arbeiten kannst, **Forke dieses Repository** über den "Fork"-Button oben rechts. 
 
 ### Ein Repository klonen:
-Klone nun dein eigenes Projekt (also deinem Fork) mit dem Befehl ```git clone <Adresse vom grünen code button oben rechts>``` an.
+**Klone nun dein eigenes Projekt** (also deinem Fork) mit dem Befehl ```git clone <Adresse vom grünen code button oben rechts>``` an.
 Beim Aufruf des Befehls wirst du gegebenenfalls nach deinem Nutzeraccount gefragt, ausser du hast SSH eingerichtet, dann kannst du hier bei der Adresse vom code button die ssh Adresse verwenden.
 Um den Accountnamen und das Password nicht immer eingeben zu müssen, kann der Zugang per SSH eingerichtet werden.
 Nach dem Klonen findest du das Repository in dem dabei neu erstellten Ordner, checke dies mit `ls`.
@@ -225,7 +227,7 @@ Dort kannst du jetzt deine Abgabendateien versionieren und Branches verwalten.
 
 ### Nach dem Clonen:
 
-Um das Projektsetup zu vollenden, musst du noch mein setup bash file ausführen. Dabei macht der erste Befehl es zu einem executable und der zweite führt es aus:\
+Um das Projektsetup zu vollenden, musst du noch mein **setup bash file ausführen**. Dabei macht der erste Befehl es zu einem executable und der zweite führt es aus:\
 ```chmod +x setup.bash```\
 ```./setup.bash```\
 Stelle dabei sicher, dass du im Projektordner bist und wenn du `ls` aufrufst die Datei `setup.bash` angezeigt wird.
