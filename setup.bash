@@ -34,9 +34,9 @@ fi
 find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 
 # then delete git untracked folders and empty folders
-git clean -fd>/dev/null
+# git clean -fd>/dev/null
 
-find . -type d -empty -delete
+# find . -type d -empty -delete
 
 echo "✅ post-checkout cleanup finished. Working tree is clean."
 EOF
