@@ -1,4 +1,4 @@
-# Einführung in die Informatik - WORK IN PROGRESS
+# Einführung in die Informatik
 
 **Aufgaben sind im jeweiligen Branch und dort im Ordner.**
 
@@ -13,7 +13,7 @@ Dieses Tutorial/Einführung ist nur für Linux oder OSX (also Mac OS) user gesch
 
 ### Fetch Updates
 
-Falls auf dem main repository, also diesem, etwas verändert wird, was du dir auf deine Version vom Repository holen willst, ist hier eine Anleitung dafür:
+Falls auf dem main repository, also dem ursprünglichen [Repository](https://github.com/JoJo149/DieBasicsDerInformatik), etwas verändert wird, was du dir auf deine Version vom Repository holen willst, ist hier eine Anleitung dafür:
 
 Lege **einmalig** den Upstream festlegen:
 ```
@@ -30,7 +30,7 @@ git push origin main
 
 ### setup:
 
-Nur falls das setup.bash sich verändert hat, führe es aus:\
+Nur falls das setup.bash sich verändert hat, führe es aus:
 ```
 chmod +x setup.bash
 ./setup.bash
