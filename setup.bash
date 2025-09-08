@@ -35,25 +35,22 @@ for branch in "${exercise_branches[@]}"; do
 done
 
 if $is_allowed; then
-    echo "Branch '$current_branch' is allowed."
+    echo "✅ Branch '$current_branch' is allowed."
 else
     printf "${RED}Abgabe-error: You are on branch '$current_branch' and not on an 'aufgabe-__' or main branch.\n${NC}"
     exit 1
 fi
-
-echo "Running exercise tests before push..."
 
 # Check for uncommitted changes
 if [ -n "$(git status --porcelain)" ]; then
     printf "${RED}Abgabe-error: There are uncommitted changes.${NC}\n"
     exit 1
 else
-    echo "All changes are committed."
+    echo "✅ All changes are committed."
 fi
 
 ROOT_DIR=$(git rev-parse --show-toplevel)
 cd "$ROOT_DIR" || exit 1
-
 
 for dir in Aufgabe*; do
     if [ -d "$dir" ]; then
@@ -65,7 +62,7 @@ for dir in Aufgabe*; do
     fi
 done
 
-echo "All tests passed. Well done. Proceeding with push."
+echo "✅ All tests passed. Well done. Proceeding with push."
 echo ""
 EOF
 
