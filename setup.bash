@@ -22,15 +22,15 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 echo "🔄 post-checkout cleanup started..."
 
-git clean -fd
-
-find . -type d -empty -delete
-
 find . -type d -name "__pycache__" -exec rm -rf {} +
 
 if [ -d ".pytest_cache" ]; then
     rm -rf .pytest_cache
 fi
+
+git clean -fd
+
+find . -type d -empty -delete
 
 echo "✅ post-checkout cleanup finished. Working tree is clean."
 EOF
