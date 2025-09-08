@@ -28,7 +28,7 @@ if [ -d ".pytest_cache" ]; then
     rm -rf .pytest_cache
 fi
 
-git clean -fd
+git clean -fd>/dev/null
 
 find . -type d -empty -delete
 
