@@ -21,16 +21,19 @@ cat <<'EOF' > .git/hooks/pre-push
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-current_branch=$(git rev-parse --abbrev-ref HEAD)
+# fertig erstellte Aufgaben Branches
+exercise_branches=("main" "master" "aufgabe-00" "aufgabe-01")
 
-if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ]; then
-    echo "On main/master branch."
+is_allowed=false
+
+if [[ " ${allowed_branches[*]} " == *" $current_branch "* ]]; then
+    echo "Branch '$current_branch' is a correct Branch."
 else
-    printf "${RED}Abgabe-error: You are on branch '$current_branch' and not on main/master branch.\n${NC}"
+    printf "${RED}Abgabe-error: You are on branch '$current_branch' and not on an 'aufgabe-__' or main branch.\n${NC}"
     exit 1
 fi
 
-echo "Running all exercise tests before push..."
+echo "Running exercise tests before push..."
 
 # Check for uncommitted changes
 if [ -n "$(git status --porcelain)" ]; then
@@ -43,17 +46,18 @@ fi
 ROOT_DIR=$(git rev-parse --show-toplevel)
 cd "$ROOT_DIR" || exit 1
 
+
 for dir in Aufgabe*; do
-  if [ -d "$dir" ]; then
-      echo "▶ Testing $dir..."
-      if ! pytest -s "$dir"; then
-          printf "${RED}Abgabe-error: Tests failed for $dir ${NC}\n"
-          exit 1
-      fi
-  fi
+    if [ -d "$dir" ]; then
+        echo "Testing $dir..."
+        if ! pytest -s "$dir"; then
+            printf "${RED}Abgabe-error: Tests failed for $dir ${NC}\n"
+            exit 1
+        fi
+    fi
 done
 
-echo "✅ All tests passed. Proceeding with push."
+echo "All tests passed. Well done. Proceeding with push."
 EOF
 
 chmod +x .git/hooks/pre-push
