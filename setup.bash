@@ -27,10 +27,11 @@ NC='\033[0m' # No Color
 echo "🔄 post-checkout cleanup started..."
 
 # first delete pytest cache
-find . -type d -name "__pycache__" -exec rm -rf {} +
 if [ -d ".pytest_cache" ]; then
     rm -rf .pytest_cache
 fi
+
+find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 
 # then delete git untracked folders and empty folders
 git clean -fd>/dev/null
