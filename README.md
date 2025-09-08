@@ -115,7 +115,7 @@ Dafür öffne erst einmal das Terminal und führe den Befehl `ls` aus.
 Dieser Befehl bedeutet list und listet, wie der Name schon vermuten lässt, alle Ordner und Dateien in deinem aktuellen Ordner auf.
 Jedes Unix basierte Dateisystem (also so gut wie alles ausser Windows) ist wie eine Wurzelstruktur aufgebaut, beginnend mit der sogenannten Root `/`.\
 Als Nächstes solltest du versuchen in einen Ordner zu navigieren, in welchen du das Repository reinkopieren willst, hilfreiche Befehle dafür sind:
-```bash
+```
 # list
 ls
 # change directory: also gehe in Ordner
