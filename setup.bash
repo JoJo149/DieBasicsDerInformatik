@@ -33,7 +33,7 @@ fi
 
 find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 
-# then delete git untracked folders and empty folders
+# then delete git untracked folders
 git clean -fd>/dev/null
 
 # delete ghost folders with specific name
