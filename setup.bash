@@ -66,6 +66,7 @@ for dir in Aufgabe*; do
 done
 
 echo "All tests passed. Well done. Proceeding with push."
+echo ""
 EOF
 
 chmod +x .git/hooks/pre-push

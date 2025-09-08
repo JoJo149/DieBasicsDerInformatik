@@ -231,6 +231,7 @@ Um das Projektsetup zu vollenden, musst du noch mein setup bash file ausführen.
 Stelle dabei sicher, dass du im Projektordner bist und wenn du `ls` aufrufst die Datei `setup.bash` angezeigt wird.
 
 Falls dies alles geklappt hat und das Programm keine Fehler ausgespuckt hat, bist du ready dich an `Aufgabe00` zu versuchen.
+Schaue dafür einfach in den Ordner `Aufgabe00`.
 
 # DA WORK IN PROGRESS
 
