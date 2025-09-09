@@ -2,7 +2,6 @@
 
 Ok, Leute, lehnt euch zurück, schnappt euch einen Kaffee (oder Kuchen), und lasst uns einsteigen.  
 Wir quatschen über: Programm vs. Algorithmus, C-Grundlagen, Datentypen, Operatoren und Schleifen.  
-Alles auf dem Level: "mach mal einfach, sonst bricht dein Hirn ab."
 
 ---
 
@@ -53,7 +52,7 @@ int main(void) {
 
 Jede Variable = so ’ne kleine Schublade mit nem Label drauf.\
 Und wehe, du versuchst, Zucker in die Eier-Schublade zu kippen. Compiler meckert.
----
+
 ## Datentypen
 Definieren die Art der Daten die in der Variable gespeichert wird.
 
@@ -65,7 +64,6 @@ Definieren die Art der Daten die in der Variable gespeichert wird.
 
 Profi-Move: `unsigned int` → keine negativen Zahlen, aber doppelt so viel Platz nach oben.
 
----
 ## Operatoren
 Operatoren sind einfach Mathe-Symbole mit mehr Attitüde:
 ```c++
@@ -93,7 +91,7 @@ Logik-Operatoren:
 - `&&` UND
 - `||` ODER
 - `!` NICHT
----
+
 ## Schleifen
 Loops sind wie Kuchen-Essen: immer wiederholen, bis Schluss ist.
 ### while-Schleife
@@ -120,7 +118,6 @@ do {
     hunger++;
 } while (hunger < 1);
 ```
----
 ## Wrap-up
 
 - **Algorithmus**: Plan (Rezept).
