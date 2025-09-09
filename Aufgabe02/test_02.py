@@ -1,3 +1,5 @@
+import math
+import random
 import subprocess
 import shutil
 import pathlib
@@ -35,30 +37,25 @@ def clib(tmp_path_factory):
 
     return lib
 
-
-@pytest.mark.parametrize(
-    "n,expected",
-    [
-        # small prime
-        (2, True), (3, True), (5, True), (7, True), (11, True), (13, True),
-        # Small composites
-        (4, False), (6, False), (8, False), (9, False), (10, False),
-        # Larger numbers
-        (29, True), (97, True), (100, False), (121, False),
-        # Edge cases
-        (0, False), (1, False), (-5, False), (-2, False)
-    ],
-    ids=[
-        "prime_2", "prime_3", "prime_5", "prime_7", "prime_11", "prime_13",
-        "composite_4", "composite_6", "composite_8", "composite_9", "composite_10",
-        "prime_29", "prime_97", "composite_100", "composite_121",
-        "composite_0", "composite_1", "composite_-5", "composite_-2"
-    ]
-)
-def test_is_prime_param(clib, n, expected):
+def py_is_prime(n: int) -> bool:
+    if n <= 1:
+        return False
+    else:
+        is_prime = True
+        for i in range(2, int(math.sqrt(n)) + 1):
+            if n % i == 0:
+                is_prime = False
+                break
+        return  is_prime
+def test_is_prime_param(clib):
     clib.isPrime.argtypes = [ctypes.c_int]
     clib.isPrime.restype = ctypes.c_bool
-    assert clib.isPrime(n) == expected
+
+    for n in range(20):  # test 20 random numbers
+        n = random.randint(-50, 2000)  # adjust range as needed
+        c_result = clib.isPrime(n)
+        py_result = py_is_prime(n)
+        assert c_result == py_result, f"Mismatch for n={n}"
 
 
 
