@@ -1,100 +1,181 @@
-# Aufgabe 02-TODO
+# Die ersten Schritte 
 
-Also. Du willst Programmieren lernen.\
-Und was macht man als erstes? Richtig: man schreibt ein **Hello World** Programm.
-Weil’s einfach ist. Weil’s jeder macht. Weil’s so eine Art Initiationsritual ist.
+Ok, Leute, lehnt euch zurück, schnappt euch einen Kaffee (oder Kuchen), und lasst uns einsteigen.  
+Wir quatschen über: Programm vs. Algorithmus, C-Grundlagen, Datentypen, Operatoren und Schleifen.  
+Alles auf dem Level: "mach mal einfach, sonst bricht dein Hirn ab."
 
 ---
-## Das Programm
 
-Hier der Klassiker:
+## Algorithmus vs Programm
+
+- **Algorithmus**: Die Schritt-für-Schritt-Anleitung.  
+  Beispiel: Kuchen backen.
+    1. Mehl holen.
+    2. Eier reinschlagen.
+    3. Zucker dazu.
+    4. Backen, bis lecker.
+
+  Wichtige Aspekte:
+  - **Korrektheit**: Erfüllt der Algorithmus seine Anforderungen?\
+    D.h.: Gibt der obige Algorithmus wirklich die Zweierpotenzen aus?
+  - **Effizienz**: Wie viel Zeit und wie viel Speicherplatz braucht er?
+  - **Terminierung**: Hält der Algorithmus immer an?)
+
+
+- **Programm**: Die *Umsetzung* des Algorithmus in einer Sprache, die dein Computer versteht.  
+  Wenn der Algorithmus das Rezept ist, ist das Programm der Roboter, der den Kuchen wirklich backt.  
+  Und wenn du Mist codest, kommt ein verbrannter Brownie raus.
+
+---
+
+## Elementare C-Strukturen
+
+Variablen: Erlauben es, Daten strukturiert zu speichern\
+In C haben wir so ’nen Baukasten.  
+Hier die Teile, die du dauernd sehen wirst:
+
 ```c++
 #include <stdio.h>
 
-int main(void)
-{
-    printf("Hello, World!\n");
+int main(void) {
+    // Variablen sind kleine Boxen im RAM
+    int alter = 42;
+    char initial = 'B';
+    float pi = 3.14;
+
+    printf("Alter: %d\n", alter);
+    printf("Initial: %c\n", initial);
+    printf("Pi: %f\n", pi);
+
     return 0;
 }
 ```
-Speicher das in einer Datei, sagen wir mal hello.c.
+
+Jede Variable = so ’ne kleine Schublade mit nem Label drauf.\
+Und wehe, du versuchst, Zucker in die Eier-Schublade zu kippen. Compiler meckert.
+---
+## Datentypen
+Definieren die Art der Daten die in der Variable gespeichert wird.
+
+- `int` → ganze Zahlen (z.B. 42, -7, 0)
+- `float` → Kommazahlen mit begrenzter Genauigkeit
+- `double` → Kommazahlen, aber mehr Bits = mehr Nachkommastellen 
+- `char` → EIN Zeichen (`'a'`, `'Z'`)
+- `void` → nix, nada, null (z.B. Rückgabewert von `main` manchmal)
+
+Profi-Move: `unsigned int` → keine negativen Zahlen, aber doppelt so viel Platz nach oben.
 
 ---
-## Der Programmierablauf
+## Operatoren
+Operatoren sind einfach Mathe-Symbole mit mehr Attitüde:
+```c++
+int a = 10, b = 3;
+// Sonderzeichen:
+// \n Newline, Zeilensprung
+// \t Tabulator
+// \0 EOS - Endezeichen in String
+printf("%d\n", a + b);   // Addition → 13
+printf("%d\n", a - b);   // Subtraktion → 7
+printf("%d\n", a * b);   // Multiplikation → 30
+printf("%d\n", a / b);   // Ganzzahl-Division → 3 (kein Komma!)
+printf("%d\n", a % b);   // Modulo → Rest = 1
+```
+Zuweisung:
+- `int z;` Initialisierung: setzt den Typ einer Variable
+- `z = 8;`Zuweisungsoperator: bedeutet: „z wird der Wert 8 zugewiesen“
 
-Du schreibst Quellcode → speicherst ihn in hello.c.\
-Quellcode ist für Menschen lesbar (naja, für manche und hoffentlich bald dich).
+Vergleichsoperatoren:
+- `==` gleich
+- `!=` ungleich
+- `<`, `>`, `<=`, `>=` logisch, oder?
 
-Computer hingegen? Die haben null Bock auf dein printf(). Die sprechen nur Maschinencode (so Nullen und Einsen, sehr langweilig binär).
+Logik-Operatoren:
+- `&&` UND
+- `||` ODER
+- `!` NICHT
+---
+## Schleifen
+Loops sind wie Kuchen-Essen: immer wiederholen, bis Schluss ist.
+### while-Schleife
+```c++
+int kuchen = 5;
+
+while (kuchen > 0) {
+    printf("Nom nom... Kuchen übrig: %d\n", kuchen);
+    kuchen--;
+}
+```
+### for-Schleife
+```c++
+for (int i = 0; i < 3; i++) {
+    printf("Backe Kuchen Nummer %d\n", i + 1);
+}
+```
+### do-while-Schleife
+```c++
+int hunger = 0;
+
+do {
+    printf("Iss mindestens EIN Stück Kuchen!\n");
+    hunger++;
+} while (hunger < 1);
+```
+---
+## Wrap-up
+
+- **Algorithmus**: Plan (Rezept).
+- **Programm**: Umsetzung in C (der Koch-Roboter).
+- **Datentypen**: Schubladen für verschiedene Zutaten.
+- **Operatoren**: Werkzeuge zum Mixen, Vergleichen, Rechnen.
+- **Schleifen**: Dinge wiederholen, bis sie fertig oder kaputt sind.
+
+Programmiere wie beim Kuchen backen: Rezept folgen, Zutaten sortieren, nicht anbrennen lassen.
 
 ---
-## Kompilierung
+## Aufgabe 02 - Prime Time
 
-Also brauchen wir einen Übersetzer: den Compiler.\
-Der Compiler nimmt also dein hello.c und übersetzt es in Maschinencode.\
-<details>
-<summary>Wenn man es Genau nimmt...</summary>
+Du sollst ein kleines C-Programm schreiben, das testet, ob eine eingegebene Zahl eine **Primzahl** ist.\
+Nutze dafür das vorgegebene Gerüst von `solution.c`.\
+Zur Erinnerung: Eine Primzahl ist nur durch **1** und **sich selbst** teilbar (z. B. 2, 3, 5, 7, 11, …).
 
-Um genauer zu sein, übersetzt der Compiler C in Assemblercode danach übernimmt der Assembler und übersetzt Assemblercode in Maschinensprache letztendlich kommt noch der linker zur Nachbearbeitung/Kombination verschiedener Module.\
-Am wichtigsten ist es zu verstehen, dass C als Sprache lesbarer und portabler ist als Maschinencode(auch als Assembly), welcher CPU-abhängig ist.
+## Anforderungen
+
+1. **Funktion `isPrime()` ist gegeben**
+    -  der Funktion wird eine Zahl `nummer` übergeben
+    - Die Funktion soll **`true` zurückgeben, wenn `nummer` eine Primzahl ist**, und **`false` sonst**.
+
+2. **Schleife verwenden**
+    - Um zu testen, ob eine Zahl durch eine andere teilbar ist, nutze eine Schleife.
+    - Zum Überprüfen der Teilbarkeit verwende den **Modulo-Operator `%`**.  
+      Beispiel:
+      ```c++
+      int rest = 5 % 2; // Ergebnis ist 1, weil 5 durch 2 geteilt Rest 1 ergibt
+      ```
+
+3. **Ausgabe ins Terminal**
+    - Es müssen **genau zwei Zeilen** ausgegeben werden.
+    - Erste Zeile: die Frage, ob die Zahl eine Primzahl ist.  
+      Beispiel:
+      ```
+      Ist 105 eine Primzahl?
+      ```
+    - Zweite Zeile: entweder nur **"Ja"** oder nur **"Nein"**.  
+      Keine zusätzlichen Texte oder Leerzeilen!
+
+4. **Beispiel-Aufruf** (wie im Terminal):
+      ```bash
+        clang -std=c11 -Wall -g ckurs_blatt02_aufgabe01.c -o ckurs_blatt02_aufgabe01
+        ./ckurs_blatt02_aufgabe01
+        Ist 105 eine Primzahl?
+        Nein
+      ```
 ---
-</details>
+## Zusammenfassung
 
-Beispiel mit gcc (GNU Compiler Collection):
-```
-gcc hello.c -o hello
-```
-- `hello.c`: dein Quellcode
+- Zahl kommt in `isPrime()`.
+- Funktion gibt `true` oder `false` zurück.
+- Mit `printf` zwei Zeilen ausgeben:
+1. "Ist <zahl> eine Primzahl?"
+2. "Ja" **oder** "Nein".
+- Keine Extras, kein Bonus-Output, nur das Gewünschte.
 
-- `-o hello`: sagt „mach mir eine ausführbare Datei mit dem Namen hello“
-
-Danach hast du eine Datei `hello`. (Ja, auf Windows heißt das dann hello.exe.)
-
----
-## Ausführung
-
-Und dann kommt der magische Moment:
-```bash
-./hello
-```
-Bämm. Ausgabe:
-```bash
-Hello, World!
-```
-Und du denkst: „Wow, ich habe soeben mit einem Computer kommuniziert.“\
-(Okay, eigentlich hast du ihm nur gesagt, er soll was auf den Bildschirm schreiben. Aber hey, Baby-Steps!)
-
----
-## Der Programmablauf
-
-Als du die Binärdatei nun also ausgeführt hast, ist im Groben sowas passiert:
-1. Dein Programm startet irgendwo im Betriebssystem.
-2. Das Betriebssystem sagt: „Ok, ab in die `main()`-Funktion, viel Spaß.“
-3. Dein `printf()`-Aufruf geht los: „Hey, Standard Output, bitte Hello, world! ausspucken!“
-4. Der Text taucht auf deinem Bildschirm auf.
-5. `main()` gibt 0 zurück → das ist so der Code für „Alles easy“.
-6. Das Betriebssystem nickt zufrieden und macht wieder sein Ding.
-
----
-## Aufgabe 01.1
-Nun also zu deiner Aufgabe, wenn du alles gut verstanden hast, sollte die ein klax für dich sein.
-Schreibe ein C-Programm in `solution.c`, welches auf dem Terminal mittels printf den Text ```Hallo, <Name>!``` ausgibt.\
-Wichtig ist zu wissen, dass die Binärdatei, also deine Lösung `solution` heißen muss.\
-Auch soll die Ausgabe auf einer separaten Zeile erfolgen bzw. das Terminal erst eine Zeile darunter wieder übernehmen.
-Eine beispielhafte Benutzung des Programms liefe wiefolgt ab:
-```
-> gcc -std=c11 -Wall -g solution.c -o solution
-> ./solution
-Hallo, Jonas!
-```
-
-Gehe sicher, dass Deine Aufgabe dabei die folgenden Bedingungen erfüllt:
-- Die Ein- und Ausgabebibliothek `stdio.h` wird korrekt geladen.
-- Die Funktion `main` ist definiert.
-- `printf` wird zur Ausgabe von Text benutzt.
-- **kein** White Space am Anfang oder Ende oder zwischen der **neuen Zeile und !**.
-
-Die Datei sollte ohne Fehler und Warnungen kompilieren beim Aufruf von:
-```
-gcc -std=c11 -Wall -g solution.c -o solution
-```
