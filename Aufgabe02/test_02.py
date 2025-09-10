@@ -48,7 +48,7 @@ def py_is_prime(n: int) -> bool:
                 break
         return  is_prime
 
-def test_is_prime_using_clib_to_create_arrays(clib):
+def test_is_prime(clib):
     # ensure ctypes signature
     clib.isPrime.argtypes = [ctypes.c_int]
     clib.isPrime.restype = ctypes.c_bool
@@ -63,7 +63,7 @@ def test_is_prime_using_clib_to_create_arrays(clib):
 
     # compare element-wise
     for n, py_res, c_res in zip(nums, py_results, c_results):
-        assert py_res == c_res, f"Mismatch for n={n}: solution={py_res}, ={c_res}"
+        assert py_res == c_res, f"Mismatch for n={n}: solution={py_res}, your answer={c_res}"
 
 
 
