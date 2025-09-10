@@ -24,20 +24,21 @@ cat <<'EOF' > .git/hooks/post-checkout
 #!/bin/bash
 RED='\033[0;31m'
 NC='\033[0m' # No Color
+
 echo "🔄 post-checkout cleanup started..."
 
-# first delete pytest cache
+# delete pytest cache
 if [ -d ".pytest_cache" ]; then
     rm -rf .pytest_cache
 fi
-
+# delete other python cache
 find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 
-# then delete git untracked folders
+# delete git untracked folders
 git clean -fd>/dev/null
 
-# delete ghost folders with specific name
-find . -name "Aufgabe*" -type d -empty -delete
+# delete ghost folders with "Aufgabe__" name and which are empty
+find . -name "Aufgabe[0-9][0-9]" -type d -empty -delete
 
 echo "✅ post-checkout cleanup finished. Working tree is clean."
 EOF
@@ -52,7 +53,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # fertig erstellte Aufgaben Branches
-exercise_branches=("main" "master" "aufgabe-01" "aufgabe-02")
+exercise_branches=("main" "master" "aufgabe-01" "aufgabe-02" "aufgabe-03")
 
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
@@ -84,7 +85,7 @@ ROOT_DIR=$(git rev-parse --show-toplevel)
 cd "$ROOT_DIR" || exit 1
 
 # do tests and check if they fail
-for dir in Aufgabe*; do
+for dir in Aufgabe[0-9][0-9]; do
     if [ -d "$dir" ]; then
         echo "Testing $dir..."
         if ! pytest -s "$dir"; then
