@@ -49,20 +49,22 @@ def py_is_prime(n: int) -> bool:
         return  is_prime
 
 def data_source(clib):
+    # Signatur für C-Funktion angeben
     clib.isPrime.argtypes = [ctypes.c_int]
     clib.isPrime.restype = ctypes.c_bool
 
+    # Zufallszahlen zum Testen
     solution_array = [random.randint(-20, 5000) for _ in range(100)]
-    c_code_array = solution_array.copy()
-    map( lambda x: (x, py_is_prime(x)), solution_array)
-    map( lambda x: (x, clib.isPrime(x)), c_code_array)
-    for a, b in zip(solution_array, c_code_array):
-        yield a, b
+
+    for n in solution_array:
+        py_result = py_is_prime(solution_array[n])
+        c_result = clib.isPrime(solution_array[n])
+        yield solution_array[n], py_result, c_result
 
 
-@pytest.mark.parametrize('a, b', data_source())
-def test_is_prime_param(a, b):
-    assert a == b, f"Mismatch for n={a[0]}"
+@pytest.mark.parametrize("n, py_result, c_result", data_source(clib))
+def test_is_prime_param(n, py_result, c_result):
+    assert py_result == c_result, f"Mismatch for n={n}: py={py_result}, c={c_result}"
 
 
 
