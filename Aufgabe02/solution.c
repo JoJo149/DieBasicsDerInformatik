@@ -7,6 +7,7 @@ bool isPrime(int nummer) {
     printf("Ist %d eine Primzahl ?\n", nummer);
 
     // HIER Code einfügen
+    // Tipp: nutze eine for-loop
 
     return true;
 }

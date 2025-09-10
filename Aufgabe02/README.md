@@ -16,13 +16,13 @@ Wir quatschen über: Programm vs. Algorithmus, C-Grundlagen, Datentypen, Operato
 
   Wichtige Aspekte:
   - **Korrektheit**: Erfüllt der Algorithmus seine Anforderungen?\
-    D.h.: Gibt der obige Algorithmus wirklich die Zweierpotenzen aus?
+    D.h.: Gibt der obige Algorithmus wirklich einen Kuchen aus?
   - **Effizienz**: Wie viel Zeit und wie viel Speicherplatz braucht er?
-  - **Terminierung**: Hält der Algorithmus immer an?)
+  - **Terminierung**: Hält der Algorithmus immer an?
 
 
 - **Programm**: Die *Umsetzung* des Algorithmus in einer Sprache, die dein Computer versteht.  
-  Wenn der Algorithmus das Rezept ist, ist das Programm der Roboter, der den Kuchen wirklich backt.  
+  Wenn der Algorithmus das Rezept ist, ist das Programm die Übersetzung des Algorithms für den Roboter, der den Kuchen wirklich backt.  
   Und wenn du Mist codest, kommt ein verbrannter Brownie raus.
 
 ---
@@ -36,7 +36,7 @@ Hier die Teile, die du dauernd sehen wirst:
 ```c++
 #include <stdio.h>
 
-int main(void) {
+int main() {
     // Variablen sind kleine Boxen im RAM
     int alter = 42;
     char initial = 'B';
@@ -60,9 +60,9 @@ Definieren die Art der Daten die in der Variable gespeichert wird.
 - `float` → Kommazahlen mit begrenzter Genauigkeit
 - `double` → Kommazahlen, aber mehr Bits = mehr Nachkommastellen 
 - `char` → EIN Zeichen (`'a'`, `'Z'`)
-- `void` → nix, nada, null (z.B. Rückgabewert von `main` manchmal)
+- `void` → nix, nada, null oft rückgabe von Funktionen
 
-Profi-Move: `unsigned int` → keine negativen Zahlen, aber doppelt so viel Platz nach oben.
+Profi-Move: `unsigned` z.b. int → keine negativen Zahlen, aber doppelt so viel Platz nach oben.
 
 ## Operatoren
 Operatoren sind einfach Mathe-Symbole mit mehr Attitüde:
@@ -137,7 +137,7 @@ Zur Erinnerung: Eine Primzahl ist nur durch **1** und **sich selbst** teilbar (z
 
 ## Anforderungen
 
-1. **Funktion `isPrime()` ist gegeben**
+1. **Gerüst für die Funktion `isPrime()` ist gegeben**
     -  der Funktion wird eine Zahl `nummer` übergeben
     - Die Funktion soll **`true` zurückgeben, wenn `nummer` eine Primzahl ist**, und **`false` sonst**.
 
