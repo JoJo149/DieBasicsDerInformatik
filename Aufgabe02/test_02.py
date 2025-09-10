@@ -47,15 +47,23 @@ def py_is_prime(n: int) -> bool:
                 is_prime = False
                 break
         return  is_prime
-def test_is_prime_param(clib):
+
+def data_source(clib):
     clib.isPrime.argtypes = [ctypes.c_int]
     clib.isPrime.restype = ctypes.c_bool
 
-    for n in range(20):  # test 20 random numbers
-        n = random.randint(-50, 2000)  # adjust range as needed
-        c_result = clib.isPrime(n)
-        py_result = py_is_prime(n)
-        assert c_result == py_result, f"Mismatch for n={n}"
+    solution_array = [random.randint(-20, 5000) for _ in range(100)]
+    c_code_array = solution_array.copy()
+    map( lambda x: (x, py_is_prime(x)), solution_array)
+    map( lambda x: (x, clib.isPrime(x)), c_code_array)
+    for a, b in zip(solution_array, c_code_array):
+        yield a, b
+
+
+@pytest.mark.parametrize('a, b', data_source())
+def test_is_prime_param(a, b):
+    assert a == b, f"Mismatch for n={a[0]}"
+
 
 
 
