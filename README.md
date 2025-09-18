@@ -10,6 +10,10 @@ Ich werde so gut wie möglich versuchen beim Nutzen der Befehle diese auch zu er
 
 Falls dies deine erste Nutzung von einem Terminal ist, kannst du dieses [cheatsheet](https://images.velog.io/images/hy9202/post/8f1f2c7e-4edf-49ec-9c9e-380ade1325a8/command-line-cheat-sheet-large01.png) als lookup table nutzen.
 
+Auch kann ich dir die Nutzung eines Texteditoren im Terminal nur ans Herz legen, dafür würde ich dir [Neovim](https://neovim.io/) empfehlen.
+Damit du nicht am Anfang schon in ein rabbit hole zu viel Zeit steckst würde ich zur Nutzung eines Setups wie [LazyVim](https://www.lazyvim.org/) raten.  
+
+
 ## Start ?
 Na ja bevor wir mit irgendetwas starten müssen wir erst mal die Tools, welche man benötigt, um das Projekt auszuführen, installieren.\
 Die Kurzfassung der benötigten Programme siehst du in der Liste von [Programmen](#dependencies), falls du schon weißt, wie man mit Paketmanagern umgeht, kannst du diese direkt installieren.
@@ -27,7 +31,6 @@ Dabei musst du jetzt nicht direkt Angst haben, sondern du solltest einfach vor d
 Nun also zu der Entscheidung welchen Paketmanager du nutzen solltest.
 Bei den meisten Linux Distros ist ein paket manager mit geliefert, falls du nicht weißt, welcher bei deinem Distro enthalten ist, solltest du Google mal fragen.
 Bei Mac hingegen würde ich die Installation vom Paketmanager [homebrew](https://brew.sh/) stark empfehlen.
-
 #### Wie installiere ich nun also Sachen mit meinem Paket Manager?
 Ich werde im Folgenden nun den Ablauf zum Installieren der benötigten Programme beschreiben, wobei ich nur die Befehle für Ubuntu und Mac OS direkt erwähne, der Ablauf sollte jedoch für die anderen Linux paket manager ähnlich sein.
 
