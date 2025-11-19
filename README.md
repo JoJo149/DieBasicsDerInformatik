@@ -8,10 +8,15 @@ Dieses Tutorial/Einführung ist nur für Linux oder OSX (also Mac OS) user gesch
 Dabei werden bestimmte Aufgaben vor allem am Anfang ein Terminal benötigen.
 Ich werde so gut wie möglich versuchen beim Nutzen der Befehle diese auch zu erklären, bei Mac will ich noch erwähnen, dass es empfehlenswert ist [Iterm](https://iterm2.com/) zu nutzen.
 
-Falls dies deine erste Nutzung von einem Terminal ist, kannst du dieses [cheatsheet](https://images.velog.io/images/hy9202/post/8f1f2c7e-4edf-49ec-9c9e-380ade1325a8/command-line-cheat-sheet-large01.png) als lookup table nutzen.
+Falls dies deine erste Nutzung von einem **Terminal** ist, kannst du dieses [cheatsheet](https://images.velog.io/images/hy9202/post/8f1f2c7e-4edf-49ec-9c9e-380ade1325a8/command-line-cheat-sheet-large01.png) als lookup table nutzen.
 
-Auch kann ich dir die Nutzung eines Texteditoren im Terminal nur ans Herz legen, dafür würde ich dir [Neovim](https://neovim.io/) empfehlen.
-Damit du nicht am Anfang schon in ein rabbit hole zu viel Zeit steckst würde ich zur Nutzung eines Setups wie [LazyVim](https://www.lazyvim.org/) raten.  
+Es ist empfehlenswert für die ersten Aufgaben, einen **Texteditor im Terminal** zu nutzen, statt direkt eine große IDE wie CLion. Warum? Weil IDEs oft Features wie aggressive Autocompletion übernehmen – das kann für den Einstieg praktisch sein, aber man lernt dann nicht, wirklich selbst zu schreiben und zu verstehen, was passiert.
+
+### Einfache Empfehlungen:
+- **[Helix](https://helix-editor.com/)** – moderner Terminal-Editor, der schon viele nützliche Funktionen bietet, ohne dass du dich in ein riesiges System einarbeiten musst.
+- **[Neovim](https://neovim.io/)** – super anpassbar, mächtig, aber es kann am Anfang ein wenig überwältigend sein. Gut als Übung, um sich mit der eigenen Entwicklungsumgebung vertraut zu machen.
+
+> Tipp: Für die ersten Aufgaben lohnt es sich, einen schlanken Editor zu nutzen. Später, wenn Projekte größer werden oder du in C++ arbeitest, kann eine IDE wie Clion das Leben deutlich einfacher machen. Dann kannst du dich auf das konzentrieren, was wirklich Spaß macht: **Code schreiben und Programme entwickeln**, statt dich mit Konfigurationen oder fehlenden Features herumzuschlagen.
 
 
 ## Start ?
