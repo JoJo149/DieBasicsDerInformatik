@@ -34,9 +34,10 @@ Also brauchen wir einen Übersetzer: den Compiler.\
 Der Compiler nimmt also dein hello.c und übersetzt es in Maschinencode.\
 <details>
 <summary>Wenn man es Genau nimmt...</summary>
-
-Um genauer zu sein, übersetzt der Compiler C in Assemblercode danach übernimmt der Assembler und übersetzt Assemblercode in Maschinensprache letztendlich kommt noch der linker zur Nachbearbeitung/Kombination verschiedener Module.\
+Um genauer zu sein, übersetzt der Compiler C in Assemblercode danach übernimmt der Assembler und übersetzt Assemblercode in Maschinensprache letztendlich kommt noch der linker zur Nachbearbeitung/Verlinken verschiedener Module.
+Bei der Linking stage, werden vor allem die inludes aufgelöst.
 Am wichtigsten ist es zu verstehen, dass C als Sprache lesbarer und portabler ist als Maschinencode(auch als Assembly), welcher CPU-abhängig ist.
+
 ---
 </details>
 
