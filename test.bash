@@ -26,9 +26,16 @@ cat <<'EOF' > .git/hooks/pre-commit
 ROOT_DIR=$(git rev-parse --show-toplevel)
 bash "$ROOT_DIR/test.bash"
 EOF
-fi
 
 # make pre-commit executable
 chmod +x .git/hooks/pre-commit
+fi
 
-pytest
+
+for dir in Aufgabe??/; do
+    [ -d "$dir" ] || continue
+    if git status --porcelain "$dir" | grep -q .; then
+        echo "🧪 Changes detected in $dir → running pytest"
+        pytest "$dir"
+    fi
+done
