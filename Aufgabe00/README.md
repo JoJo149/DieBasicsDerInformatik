@@ -164,8 +164,8 @@ Um das zu beheben, musst du jetzt dein Wissen anwenden:
    Um zu prüfen, ob alles geklappt hat, versuche jetzt nochmal zu pushen.
 
 Wenn der Push erfolgreich war, kannst du dich jetzt an die anderen Aufgaben wagen.  
-**Jede Aufgabe lebt in ihrem eigenen Branch** – praktisch, um nichts kaputt zu machen.
+**Jede Aufgabe lebt in ihrem eigenen Ordner** – praktisch, um nichts kaputtzumachen.
 
 Mein Tipp: geh die Aufgaben der Reihe nach durch.  
-Die Reihenfolge hat nämlich schon ihren Sinn, sonst wird es schnell chaotisch.
+Die Reihenfolge hat nämlich schon ihren Sinn, sonst wird es schnell chaotisch und frustrierend.
 
