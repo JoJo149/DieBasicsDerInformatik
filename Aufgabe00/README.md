@@ -124,14 +124,15 @@ Denn glaub mir: dein zukünftiges Ich wird fluchen, wenn du Messages wie „fix�
 > Git vergisst nichts. Aber du schon. Also committe früh, committe oft, und sei nett zu deinem zukünftigen Ich.
 
 ## Aufgabe 00.0
-Nun versuche einmal einfach den Inhalt von `egal.txt` anzupassen und diesen zu adden, zu committen und zu pushen.
+Nun versuche einmal einfach den Inhalt von `egal.txt` anzupassen und diesen zu adden und zu committen.
 <details>
-<summary>Lösung</summary>
+<summary> deine erste Fehlermeldung</summary>
 
-Hahaha, hattest du gerade so eine böse Fehlermeldung gesehen?
+Hahaha, hast du gerade so eine böse Fehlermeldung gesehen?
 
 <pre><code style="color: red;">
-Tests failed for Aufgabe00
+FAILED Aufgabe00/test_00.py::test_branch - AssertionError: Branch 'local-branch' does not exist
+FAILED Aufgabe00/test_00.py::test_branch_file - AssertionError: File 'Aufgabe00/test.txt' not found in branch 'local-branch'
 </code></pre>
 
 Keine Panik!  
@@ -139,8 +140,6 @@ Wenn du alles richtig gemacht hast, dann **solltest** du genau diese Meldung bek
 Das heißt: alles läuft wie geplant. 🎉
 
 Du kannst also unbesorgt mit dem nächsten Schritt weitermachen.
-
-
 
 </details>
 
