@@ -38,7 +38,22 @@ fi
 # check if an directory has changed, if so use tests for the directory
 for dir in Aufgabe??/; do
     [ -d "$dir" ] || continue
+
+    run_tests=false
+
+    # 1️⃣ Unstaged or staged changes in folder
     if git status --porcelain "$dir" | grep -q .; then
+        run_tests=true
+    fi
+
+    # 2️⃣ Committed but not pushed changes affecting folder
+    if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+        if git diff --name-only @{u}..HEAD -- "$dir" | grep -q .; then
+            run_tests=true
+        fi
+    fi
+
+    if [ "$run_tests" = true ]; then
         echo "🧪 Changes detected in $dir → running pytest"
         pytest "$dir"
     fi
