@@ -17,7 +17,7 @@ check pytest
 check cc
 check git
 
-echo "✅ All dependencies found"
+echo " ✅ All dependencies found"
 
 # go into root of project
 ROOT_DIR=$(git rev-parse --show-toplevel)
@@ -43,3 +43,4 @@ for dir in Aufgabe??/; do
         pytest "$dir"
     fi
 done
+echo " ✅ All Tests passed"
